@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose'
 import index from './routes';
@@ -13,6 +14,7 @@ mongoose.connect(`${LOCALDB}`).then(() => {
     console.error('Error connecting to mongo', err)
 });
 
+app.use(cors({ allowedHeaders: `${LOCALDB}` }));
 app.use(express.json())
 app.use("/", index);
 
