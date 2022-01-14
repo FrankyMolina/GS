@@ -1,4 +1,4 @@
-export type PhoneTypes = {
+export type PhoneType = {
     name: string,
     manufacturer: string,
     description: string,
@@ -10,4 +10,4 @@ export type PhoneTypes = {
     ram: number,
 }
 
-export type PhoneList = PhoneTypes[]
+export type PhoneList = PhoneType[]

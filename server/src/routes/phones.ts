@@ -1,6 +1,6 @@
 import * as express from 'express'
 import Phone from '../models/phones'
-import { PhoneTypes } from '../types/phone'
+import { PhoneType } from '../types/phone'
 
 const router = express.Router()
 
@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/new-phone', (req, res) => {
-  const newPhone: PhoneTypes = {
+  const newPhone: PhoneType = {
     name: req.body.name,
     manufacturer: req.body.manufacturer,
     description: req.body.description,
@@ -36,7 +36,7 @@ router.post('/new-phone', (req, res) => {
 
 router.put('/update-phone/:id', (req, res) => {
   const { id } = req.params
-  const newPhone: PhoneTypes = {
+  const newPhone: PhoneType = {
     name: req.body.name,
     manufacturer: req.body.manufacturer,
     description: req.body.description,
