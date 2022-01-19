@@ -6,7 +6,7 @@ import index from './routes'
 
 dotenv.config()
 const app = express()
-const { PORT, LOCALDB } = process.env
+const { PORT, LOCALDB, CORS } = process.env
 
 mongoose
   .connect(`${LOCALDB}`)
@@ -17,7 +17,7 @@ mongoose
     console.error('Error connecting to mongo', err)
   })
 
-app.use(cors({ allowedHeaders: `${LOCALDB}` }))
+app.use(cors({ allowedHeaders: '*' }))
 app.use(express.json())
 app.use('/', index)
 

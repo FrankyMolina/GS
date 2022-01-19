@@ -34,7 +34,7 @@ router.post('/new-phone', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-router.put('/update-phone/:id', (req, res) => {
+router.put('/edit/:id', (req, res) => {
   const { id } = req.params
   const newPhone: PhoneType = {
     name: req.body.name,
@@ -47,7 +47,6 @@ router.put('/update-phone/:id', (req, res) => {
     processor: req.body.processor,
     ram: req.body.ram
   }
-
   Phone.findByIdAndUpdate(id, { $set: newPhone })
     .then((updatedPhone) => res.json(updatedPhone))
     .catch((err) => console.log(err))

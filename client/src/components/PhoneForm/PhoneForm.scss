@@ -1,0 +1,41 @@
+@use '../../styles/common.scss' as Common;
+@use '../../styles/fonts.scss' as Font;
+@use '../../styles/uiColors.scss' as Color;
+
+.phoneForm {
+  width: 22rem;
+  font-family: Font.$author;
+  border-radius: 5px;
+  border: 1px solid Color.$lightblue;
+  padding: 2rem;
+  > form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn {
+    @include Common.button;
+    margin-top: 1rem;
+  }
+  input {
+    margin-top: 0.2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+  &__submitted {
+    text-align: center;
+    color: Color.$lightgreen;
+    font-family: Font.$title;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}

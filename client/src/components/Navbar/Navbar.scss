@@ -1,0 +1,18 @@
+@use '../../styles/uiColors.scss' as Color;
+@use '../../styles/common.scss' as Common;
+
+.navbar {
+  align-items: center;
+  background-color: Color.$white;
+  box-shadow: 0px 2px 15px -4px rgba(0,0,0,0.35);
+  display: flex;
+  height: 4rem;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  &__btn {
+    @include Common.button;
+  }
+}

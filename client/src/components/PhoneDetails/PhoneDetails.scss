@@ -1,0 +1,39 @@
+@use '../../styles/common.scss' as Common;
+@use '../../styles/uiColors.scss' as Color;
+@use '../../styles/fonts.scss' as Font;
+.phoneDetails {
+  align-items: center;
+  background-color: Color.$aliceblue;
+  border-radius: 5px;
+  border: 1px solid Color.$lightblue;
+  display: flex;
+  flex-direction: column;
+  font-family: Font.$author;
+  justify-content: center;
+  width: 21rem;
+
+  > img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+  }
+
+  > h3 {
+    font-family: Font.$title;
+    margin: 1rem 0;
+  }
+  > ul {
+    text-align: center;
+  }
+
+  &__btnsContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 15rem;
+    margin: 2rem 0;
+  }
+
+  &__btn {
+    @include Common.button;
+  }
+}

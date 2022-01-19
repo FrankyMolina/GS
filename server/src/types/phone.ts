@@ -10,4 +10,4 @@ export type PhoneType = {
     ram: number,
 }
 
-export type PhoneList = PhoneType[]
+export type PhoneListType = PhoneType[]

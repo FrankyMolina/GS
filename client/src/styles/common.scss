@@ -1,0 +1,13 @@
+@use './uiColors.scss' as Color;
+@use './fonts.scss' as Font;
+@mixin button {
+  border: 1px solid Color.$blue;
+  border-radius: 5px;
+  color: Color.$black;
+  text-decoration: none;
+  padding: 0.3rem;
+  font-family: Font.$title;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,18 +1,18 @@
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import Phone from '../models/phones'
-import { PhoneList } from '../types/phone'
+import { PhoneListType } from '../types/phone'
 dotenv.config()
 const { LOCALDB } = process.env
 
-const phones: PhoneList = [
+const phones: PhoneListType = [
   {
     name: 'iPhone 10',
     manufacturer: 'Apple',
     description: 'lorem ipsum dolor sit amet consectetur.',
     color: 'black',
     price: 1000,
-    imageFileName: 'IPhone_7.png',
+    imageFileName: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000',
     screen: '4,7 inch IPS',
     processor: 'A10 Fusion',
     ram: 2
@@ -23,7 +23,7 @@ const phones: PhoneList = [
     description: 'lorem ipsum dolor sit amet consectetur.',
     color: 'black',
     price: 500,
-    imageFileName: 'IPhone_7.png',
+    imageFileName: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000',
     screen: '4,7 inch IPS',
     processor: 'A10 Fusion',
     ram: 2
@@ -34,7 +34,7 @@ const phones: PhoneList = [
     description: 'lorem ipsum dolor sit amet consectetur.',
     color: 'black',
     price: 10000000,
-    imageFileName: 'IPhone_7.png',
+    imageFileName: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000',
     screen: '4,7 inch IPS',
     processor: 'A10 Fusion',
     ram: 2
@@ -45,7 +45,7 @@ const phones: PhoneList = [
     description: 'lorem ipsum dolor sit amet consectetur.',
     color: 'black',
     price: 1000,
-    imageFileName: 'IPhone_7.png',
+    imageFileName: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000',
     screen: '4,7 inch IPS',
     processor: 'A10 Fusion',
     ram: 2
@@ -56,7 +56,7 @@ const phones: PhoneList = [
     description: 'lorem ipsum dolor sit amet consectetur.',
     color: 'black',
     price: 500,
-    imageFileName: 'IPhone_7.png',
+    imageFileName: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000',
     screen: '4,7 inch IPS',
     processor: 'A10 Fusion',
     ram: 2
@@ -67,7 +67,7 @@ const phones: PhoneList = [
     description: 'lorem ipsum dolor sit amet consectetur.',
     color: 'black',
     price: 1,
-    imageFileName: 'IPhone_7.png',
+    imageFileName: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000',
     screen: '4,7 inch IPS',
     processor: 'A10 Fusion',
     ram: 2
