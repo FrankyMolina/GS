@@ -32,14 +32,11 @@ export async function createNewPhone(newPhone: PhoneType) {
   }
 }
 export async function editPhone(id: string, newPhoneData: PhoneType) {
-  const bodyJSON = JSON.stringify(newPhoneData)
-  console.log(bodyJSON)
-
   try {
     await fetch(`${APIURL}/phones/edit/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: bodyJSON
+      body: JSON.stringify(newPhoneData)
     })
     return true
   } catch (err: any) {
