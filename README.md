@@ -13,13 +13,13 @@
 
 - Express.
 - Typescript.
-- mongoose
-- eslint
-- prettier
+- mongoose.
+- eslint.
+- prettier.
 
 ### DB:
 
-- Mongodb
+- Mongodb.
 
 ---
 
