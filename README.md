@@ -40,7 +40,7 @@
   `ex: REACT_APP_API_URL=http://localhost:4000`
 
 ### Next steps:
-
+- Install dependencies in server and client `npm i`
 - Populate the db using `npm run seed` on the server folder in your terminal.
 - Turn on the server using `npm run start:dev` on the server folder in your terminal.
 - Turn on the client using `npm run start` on the server folder in your terminal.
