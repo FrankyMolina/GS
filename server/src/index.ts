@@ -6,7 +6,7 @@ import index from './routes'
 
 dotenv.config()
 const app = express()
-const { PORT, LOCALDB, CORS } = process.env
+const { PORT, LOCALDB } = process.env
 
 mongoose
   .connect(`${LOCALDB}`)

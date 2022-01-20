@@ -7,8 +7,7 @@
 
   @include BreakPoints.desktop {
     width: 100%;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    max-width: 41rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

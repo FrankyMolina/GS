@@ -7,6 +7,7 @@ import './PhoneDetails.scss'
 
 const PhoneDetails: React.FC = () => {
   const [phoneData, setPhoneData] = useState<PhoneType | null>(null)
+  const [deleted, setDeleted] = useState(false)
   const { id } = useParams()
   useEffect(() => {
     if (id) {
@@ -16,7 +17,8 @@ const PhoneDetails: React.FC = () => {
         }
       })
     }
-  }, [])
+  }, [id])
+
   if (!phoneData) return <Watch color="lightblue" />
 
   const {
@@ -34,11 +36,12 @@ const PhoneDetails: React.FC = () => {
   const onClickDelete = () => {
     if (id) {
       deletePhone(id)
+      setDeleted(true)
     }
   }
 
   return (
-    <div className="phoneDetails">
+    <div className="phoneDetails" data-testid="phoneDetailsTest">
       <img src={imageFileName} alt="phone" />
       <h3>{name}</h3>
       <ul>
@@ -55,9 +58,19 @@ const PhoneDetails: React.FC = () => {
         <Link to={`/phones/edit/${id}`} className="phoneDetails__btn">
           edit phone
         </Link>
-        <button onClick={onClickDelete} className="phoneDetails__btn">
-          Delete phone
-        </button>
+        {deleted ? (
+          <div className="phoneDetails__deleted" data-testid="deleteBtnSuccess">
+            Deleted!
+          </div>
+        ) : (
+          <button
+            onClick={onClickDelete}
+            className="phoneDetails__btn"
+            data-testid="DeleteBtnTest"
+          >
+            Delete phone
+          </button>
+        )}
       </div>
     </div>
   )

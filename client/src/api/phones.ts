@@ -1,8 +1,9 @@
 import { PhoneListType, PhoneType } from '../types/phones'
+const APIURL = process.env.REACT_APP_API_URL
 
 export async function getPhones() {
   try {
-    const response = await fetch(`http://localhost:4000/phones`)
+    const response = await fetch(`${APIURL}/phones`)
     const phones = await response.json()
     return phones as PhoneListType
   } catch (err: any) {
@@ -11,7 +12,7 @@ export async function getPhones() {
 }
 export async function getPhoneDetails(id: string) {
   try {
-    const response = await fetch(`http://localhost:4000/phones/${id}`)
+    const response = await fetch(`${APIURL}/phones/${id}`)
     const phone = await response.json()
     return phone as PhoneType
   } catch (err: any) {
@@ -20,7 +21,7 @@ export async function getPhoneDetails(id: string) {
 }
 export async function createNewPhone(newPhone: PhoneType) {
   try {
-    const response = await fetch(`http://localhost:4000/phones/new-phone`, {
+    const response = await fetch(`${APIURL}/phones/new-phone`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newPhone)
@@ -35,7 +36,7 @@ export async function editPhone(id: string, newPhoneData: PhoneType) {
   console.log(bodyJSON)
 
   try {
-    const response = await fetch(`http://localhost:4000/phones/edit/${id}`, {
+    const response = await fetch(`${APIURL}/phones/edit/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: bodyJSON
@@ -47,12 +48,9 @@ export async function editPhone(id: string, newPhoneData: PhoneType) {
 }
 export async function deletePhone(id: string) {
   try {
-    const response = await fetch(
-      `http://localhost:4000/phones/delete-phone/${id}`,
-      {
-        method: 'DELETE'
-      }
-    )
+    const response = await fetch(`${APIURL}/phones/delete-phone/${id}`, {
+      method: 'DELETE'
+    })
     const phone = await response.json()
     return phone as PhoneType
   } catch (err: any) {
