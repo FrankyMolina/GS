@@ -21,7 +21,7 @@ export async function getPhoneDetails(id: string) {
 }
 export async function createNewPhone(newPhone: PhoneType) {
   try {
-    const response = await fetch(`${APIURL}/phones/new-phone`, {
+    await fetch(`${APIURL}/phones/new-phone`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newPhone)
@@ -36,7 +36,7 @@ export async function editPhone(id: string, newPhoneData: PhoneType) {
   console.log(bodyJSON)
 
   try {
-    const response = await fetch(`${APIURL}/phones/edit/${id}`, {
+    await fetch(`${APIURL}/phones/edit/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: bodyJSON
@@ -48,11 +48,10 @@ export async function editPhone(id: string, newPhoneData: PhoneType) {
 }
 export async function deletePhone(id: string) {
   try {
-    const response = await fetch(`${APIURL}/phones/delete-phone/${id}`, {
+    await fetch(`${APIURL}/phones/delete-phone/${id}`, {
       method: 'DELETE'
     })
-    const phone = await response.json()
-    return phone as PhoneType
+    return true
   } catch (err: any) {
     console.error(err.message)
   }

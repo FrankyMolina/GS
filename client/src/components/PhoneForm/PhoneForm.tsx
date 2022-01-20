@@ -33,7 +33,7 @@ const PhoneForm: React.FC = () => {
       })
     }
     return setFormData(EMPTY_STATE)
-  }, [location.pathname])
+  }, [location.pathname, id])
 
   const handleSubmit = (ev: React.FormEvent) => {
     ev.preventDefault()
