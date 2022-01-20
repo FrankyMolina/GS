@@ -36,7 +36,7 @@
 
 ### .ENV for client:
 
-- Set the API URL of your server.
+- Set the API URL.
   `ex: REACT_APP_API_URL=http://localhost:4000`
 
 ### Next steps:
